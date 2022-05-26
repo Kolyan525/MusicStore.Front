@@ -5,6 +5,7 @@ import Genres from './components/Genres';
 import Artists from './components/Artists';
 import { BrowserRouter, Route, Routes, NavLink } from 'react-router-dom'
 import { QueryClient, QueryClientProvider, useQuery } from 'react-query';
+import ImageUpload from './components/ImageUpload';
 
 const queryClient = new QueryClient();
 
@@ -41,12 +42,22 @@ function App() {
                   Genres
                 </NavLink>
               </li>
+              <li className='nav-item- m-1'>
+                <NavLink
+                  className='btn btn-light btn-outline-primary'
+                  to='/upload'
+                >
+                  Upload
+                </NavLink>
+              </li>
+              
             </ul>
           </nav>
           <Routes>
             <Route path='/songs' element={<Song />} />
             <Route path='/artists' element={<Artists />} />
             <Route path='/genres' element={<Genres />} />
+            <Route path='/upload' element={<ImageUpload />} />
           </Routes>
         </div>
       </BrowserRouter>
